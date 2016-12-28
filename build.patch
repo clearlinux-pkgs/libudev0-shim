@@ -1,0 +1,17 @@
+--- libudev0-shim-1/Makefile~	2016-08-16 16:34:23.000000000 +0000
++++ libudev0-shim-1/Makefile	2016-12-28 20:43:36.150494120 +0000
+@@ -10,5 +10,14 @@
+ libudev.so.0.0.9999: libudev0.c
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) $^ -o $@
+ 
++libudev32.so.0.0.9999: libudev0.c
++	$(CC) -m32 $(CFLAGS) $(LDFLAGS) $(LDLIBS) $^ -o $@
++	
++install: libudev.so.0.0.9999 libudev32.so.0.0.9999
++	mkdir -p $(DESTDIR)/usr/lib64
++	mkdir -p $(DESTDIR)/usr/lib32
++	cp libudev.so.0.0.9999  $(DESTDIR)/usr/lib64
++	cp libudev32.so.0.0.9999  $(DESTDIR)/usr/lib32/libudev.so.0.0.9999
++
+ clean:
+ 	$(RM) libudev.so.0.0.9999

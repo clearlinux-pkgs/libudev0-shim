@@ -1,11 +1,17 @@
---- libudev0-shim-1/Makefile~	2016-08-16 16:34:23.000000000 +0000
-+++ libudev0-shim-1/Makefile	2016-12-28 20:43:36.150494120 +0000
-@@ -10,5 +10,14 @@
+--- libudev0-shim-1/Makefile.org	2016-12-28 20:42:20.916359893 +0000
++++ libudev0-shim-1/Makefile	2016-12-28 22:18:26.846955815 +0000
+@@ -5,10 +5,19 @@
+ default: all
+ 
+ all: \
+-	libudev.so.0.0.9999
++	libudev.so.0.0.9999 libudev32.so.0.0.9999
+ 
  libudev.so.0.0.9999: libudev0.c
  	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) $^ -o $@
  
 +libudev32.so.0.0.9999: libudev0.c
-+	$(CC) -m32 $(CFLAGS) $(LDFLAGS) $(LDLIBS) $^ -o $@
++	$(CC) $(CFLAGS) -m32 $(LDFLAGS) $(LDLIBS) $^ -o $@
 +	
 +install: libudev.so.0.0.9999 libudev32.so.0.0.9999
 +	mkdir -p $(DESTDIR)/usr/lib64

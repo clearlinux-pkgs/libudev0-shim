@@ -43,6 +43,7 @@ lib32 components for the libudev0-shim package.
 
 %build
 export LANG=C
+unset LD_AS_NEEDED
 make V=1  %{?_smp_mflags}
 
 %install

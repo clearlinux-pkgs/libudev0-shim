@@ -1,6 +1,6 @@
 Name     : libudev0-shim
 Version  : 1
-Release  : 5
+Release  : 6
 URL      : https://github.com/archlinux/libudev0-shim/archive/v1.tar.gz
 Source0  : https://github.com/archlinux/libudev0-shim/archive/v1.tar.gz
 Summary  : No detailed summary available

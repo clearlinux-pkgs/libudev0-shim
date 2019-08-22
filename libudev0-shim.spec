@@ -1,6 +1,6 @@
 Name     : libudev0-shim
 Version  : 1
-Release  : 7
+Release  : 8
 URL      : https://github.com/archlinux/libudev0-shim/archive/v1.tar.gz
 Source0  : https://github.com/archlinux/libudev0-shim/archive/v1.tar.gz
 Summary  : No detailed summary available
@@ -55,8 +55,10 @@ rm -rf %{buildroot}
 
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/libudev.so.0
 /usr/lib64/libudev.so.0.0.9999
 
 %files lib32
 %defattr(-,root,root,-)
+/usr/lib32/libudev.so.0
 /usr/lib32/libudev.so.0.0.9999

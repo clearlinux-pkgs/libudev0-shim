@@ -1,6 +1,6 @@
 Name     : libudev0-shim
 Version  : 1
-Release  : 8
+Release  : 9
 URL      : https://github.com/archlinux/libudev0-shim/archive/v1.tar.gz
 Source0  : https://github.com/archlinux/libudev0-shim/archive/v1.tar.gz
 Summary  : No detailed summary available
@@ -42,7 +42,7 @@ lib32 components for the libudev0-shim package.
 %patch1 -p1
 
 %build
-export LANG=C
+export LANG=C.UTF-8
 unset LD_AS_NEEDED
 make V=1  %{?_smp_mflags}
 
